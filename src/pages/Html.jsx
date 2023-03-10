@@ -1,6 +1,7 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import html from "../assets/images/logo_html.png";
 const Html = () => {
+  const navigate = useNavigate();
   return (
     <div>
       <div className="card p-4 text-center flex flex-col gap-2">
@@ -24,9 +25,14 @@ const Html = () => {
           bağlantılar, videolar ve diğer medya türlerini web sayfasına eklemek
           için kullanılır.
         </p>
-        <Link to={"/"} className="text-center">
-          <button className="py-2 px-4 text-white bg-red-500">Go Back</button>
-        </Link>
+        <div className="text-center">
+          <button
+            className="py-2 px-4 text-white bg-red-500 "
+            onClick={() => navigate(-1)}
+          >
+            Go Back
+          </button>
+        </div>
       </div>
     </div>
   );
